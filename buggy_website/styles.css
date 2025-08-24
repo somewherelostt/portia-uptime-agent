@@ -1,0 +1,171 @@
+/* Buggy CSS - Intentional errors for testing Portia Uptime Agent */
+
+/* Missing semicolon - will break CSS parsing */
+body {
+    margin: 0
+    padding: 0
+    font-family: 'Arial', sans-serif
+    background-color: #f5f5f5
+}
+
+/* Invalid CSS property - will cause rendering issues */
+.container {
+    max-width: 1200px
+    margin: 0 auto
+    padding: 20px
+    background-color: invalid-color
+}
+
+/* Missing closing brace - will break all subsequent CSS */
+.header {
+    text-align: center
+    padding: 40px 0
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+    color: white
+    border-radius: 10px
+    margin-bottom: 30px
+
+/* Missing semicolon and invalid value */
+.title {
+    font-size: 2.5em
+    margin-bottom: 10px
+    color: #ffffff
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3)
+    font-weight: bold
+}
+
+.subtitle {
+    font-size: 1.2em
+    opacity: 0.9
+    margin: 0
+}
+
+/* Invalid CSS selector - will not work */
+.main-content {
+    display: grid
+    gap: 30px
+    grid-template-columns: 1fr
+}
+
+/* Missing property value - will cause layout issues */
+.card {
+    background: white
+    padding: 25px
+    border-radius: 8px
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1)
+    border: 2px solid
+}
+
+.card h2 {
+    color: #333
+    margin-top: 0
+    margin-bottom: 15px
+    font-size: 1.5em
+}
+
+.card p {
+    color: #666
+    line-height: 1.6
+    margin-bottom: 15px
+}
+
+/* Invalid CSS - missing semicolon */
+.card ul {
+    margin: 0
+    padding-left: 20px
+}
+
+.card li {
+    margin-bottom: 8px
+    color: #555
+}
+
+/* Broken CSS - missing closing brace and invalid properties */
+.status-indicator {
+    text-align: center
+    padding: 20px
+    background-color: #fff3cd
+    border: 1px solid #ffeaa7
+    border-radius: 5px
+
+.status-badge {
+    display: inline-block
+    padding: 8px 16px
+    background-color: #ffc107
+    color: #856404
+    border-radius: 20px
+    font-weight: bold
+    font-size: 1.1em
+    margin-bottom: 10px
+}
+
+/* Invalid CSS property values */
+.feature-grid {
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    gap: 20px
+    margin-top: 20px
+}
+
+.feature-item {
+    padding: 20px
+    background-color: #f8f9fa
+    border-radius: 5px
+    border-left: 4px solid #007bff
+    text-align: center
+}
+
+.feature-item h3 {
+    color: #007bff
+    margin-top: 0
+    margin-bottom: 10px
+    font-size: 1.2em
+}
+
+.feature-item p {
+    color: #6c757d
+    margin: 0
+    font-size: 0.9em
+}
+
+/* Missing semicolon and invalid CSS */
+.footer {
+    text-align: center
+    padding: 30px 0
+    margin-top: 40px
+    border-top: 1px solid #dee2e6
+    color: #6c757d
+    background-color: invalid-color
+}
+
+.footer p {
+    margin: 5px 0
+    font-size: 0.9em
+}
+
+/* Responsive design with bugs */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px
+        margin: 10px
+    }
+    
+    .header {
+        padding: 30px 0
+        margin-bottom: 20px
+    }
+    
+    .title {
+        font-size: 2em
+        color: invalid-color
+    }
+    
+    .card {
+        padding: 20px
+        margin-bottom: 20px
+    }
+    
+    /* Missing closing brace - will break mobile styles */
+    .feature-grid {
+        grid-template-columns: 1fr
+        gap: 15px
