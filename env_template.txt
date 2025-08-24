@@ -1,0 +1,28 @@
+# Website to monitor
+MONITORED_URL=https://your-website.com
+
+# Telegram Bot (Required)
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+TELEGRAM_CHAT_ID=your_chat_id_here
+
+# Google AI Studio Configuration (Required for AI monitoring and code fixes)
+GOOGLE_AI_API_KEY=your_google_ai_api_key_here
+
+# Portia API Configuration (Optional - for enhanced monitoring features)
+PORTIA_API_KEY=your_portia_api_key_here
+PORTIA_BASE_URL=https://api.portialabs.ai
+PORTIA_TIMEOUT=30
+PORTIA_RETRY_ATTEMPTS=3
+PORTIA_WEBHOOK_URL=your_webhook_url_here
+PORTIA_NOTIFICATION_CHANNELS=telegram,email
+
+# GitHub Integration (Required for automatic PR creation)
+GITHUB_TOKEN=your_github_personal_access_token_here
+GITHUB_REPO_OWNER=your_github_username
+GITHUB_REPO_NAME=your_repository_name
+GITHUB_BRANCH=main
+
+# Monitoring Configuration
+MONITORING_INTERVAL=5
+RETRY_ATTEMPTS=3
+DOWN_THRESHOLD=2
