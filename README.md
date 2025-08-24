@@ -98,6 +98,7 @@ python simple_setup.py
 ```
 
 ### **When Website Goes Down:**
+![alt text](image.png)
 ```
 🚨 Site is DOWN (Count: 2/2)
 [AI] Analyzing website issue using Gemini...
