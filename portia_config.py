@@ -36,12 +36,19 @@ def get_portia_config():
 def get_portia_headers():
     """Get standard headers for Portia API requests"""
     config = get_portia_config()
-    return {
+    headers = {
         "Authorization": f"Bearer {config['api_key']}",
         "Content-Type": "application/json",
         "User-Agent": "Portia-Uptime-Agent/1.0",
         "Accept": "application/json"
     }
+    
+    # Add org ID header if available (optional)
+    org_id = os.getenv("PORTIA_ORG_ID")
+    if org_id and org_id != "your_actual_org_id_from_dashboard":
+        headers["X-Portia-Org-ID"] = org_id
+    
+    return headers
 
 def validate_portia_config():
     """Validate Portia configuration"""

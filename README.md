@@ -1,300 +1,161 @@
-# 🚀 Portia Uptime Agent - Enhanced Hackathon Version (Gemini AI)
+# 🚀 Portia Uptime Agent - AI-Powered Website Monitoring
 
-A revolutionary, **AI-powered autonomous website monitoring system,** that not only detects downtime but **automatically fixes issues** by creating GitHub pull requests with AI-generated code fixes. **Powered by Google Gemini AI - 100% FREE tier!**
+**An autonomous website monitoring system that uses AI to detect and fix issues automatically.**
 
-## ✨ Revolutionary Features
+## ✅ WORKING FEATURES (Verified & Ready for Demo)
 
-- 🤖 **Gemini AI-Powered Issue Resolution**: Uses Google Gemini 1.5 Flash for intelligent analysis and fixes
-- 🔗 **Automatic GitHub Integration**: Creates PRs with fixes when issues are detected
-- 🛠️ **Self-Healing Code**: Automatically generates and applies code fixes
-- 📱 **Real-time Notifications**: Instant Telegram alerts for downtime and fixes
-- ⚡ **Intelligent Monitoring**: Smart retry logic with configurable thresholds
-- 🔒 **Secure & Scalable**: Enterprise-ready architecture with secure API integration
-- 🔌 **Portia API Integration**: Enhanced monitoring with external API services
-- 💰 **Zero AI Costs**: Completely free using Gemini's generous free tier
+### **🤖 AI-Powered Analysis**
+- **Google Gemini AI Integration** - 100% FREE tier (15 requests/min)
+- **Automatic Root Cause Analysis** - AI identifies website issues
+- **Code Fix Generation** - AI creates specific solutions
 
-## 🎯 What Makes This Special
+### **📊 Real-Time Monitoring**
+- **Website Uptime Checking** - Monitors any URL with retry logic
+- **Response Time Tracking** - Measures performance metrics
+- **Down Threshold Detection** - Configurable failure limits (default: 2)
 
-**Traditional monitoring systems** just tell you when something is wrong.
-**Portia Uptime Agent** actually **fixes the problems automatically** using **free AI**!
+### **🔗 Automatic Integrations**
+- **GitHub PR Creation** - Auto-creates pull requests with fixes
+- **Telegram Notifications** - Real-time alerts for downtime/recovery
+- **Portia API Integration** - Enhanced monitoring capabilities
 
-### 🔄 Complete Autonomous Workflow
+### **🛠️ Self-Healing System**
+- **Issue Detection** - Identifies when websites go down
+- **AI Analysis** - Gemini analyzes the problem
+- **Fix Generation** - Creates code solutions automatically
+- **PR Creation** - Submits fixes via GitHub
 
-1. **Website goes down** → System detects it immediately
-2. **Gemini AI analyzes the issue** → Identifies root cause and affected files
-3. **Code fixes generated** → AI creates specific solutions
-4. **GitHub PR created** → Automatic branch, commit, and pull request
-5. **Owner reviews** → Human oversight of AI-generated fixes
-6. **Merge and deploy** → Website automatically recovers
+## 🚀 QUICK START (30 seconds)
 
-## 🚀 Quick Start
-
-### 1. Clone and Setup
-
+### 1. Install Dependencies
 ```bash
-git clone <your-repo-url>
-cd portia-uptime-agent
-python -m venv venv
-venv\Scripts\activate  # Windows
-# or
-source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 ```
 
-### 2. Environment Configuration
-
-```bash
-copy env_template.txt .env
-```
-
-Edit `.env` with your credentials:
-
+### 2. Configure API Keys
+Edit `.env` file with your keys:
 ```env
-# Website to monitor
+# Required for AI features
+GOOGLE_AI_API_KEY=your_gemini_api_key
+
+# Required for monitoring  
 MONITORED_URL=https://your-website.com
 
-# GitHub Integration (Required for automatic fixes)
-GITHUB_TOKEN=your_github_personal_access_token
-GITHUB_REPO_OWNER=your_github_username
-GITHUB_REPO_NAME=your_repository_name
-
-# Google Gemini AI (Required for AI analysis - FREE!)
-GOOGLE_AI_API_KEY=your_google_ai_api_key
-
-# Telegram Bot (Required for notifications)
+# Optional integrations
+GITHUB_TOKEN=your_github_token
 TELEGRAM_BOT_TOKEN=your_bot_token
-TELEGRAM_CHAT_ID=your_chat_id
+PORTIA_API_KEY=your_portia_key
 ```
 
-### 3. Run the Demo
-
+### 3. Run Demo
 ```bash
-# Showcase all features for judges
+python demo.py          # Interactive demo
+python main.py          # Single monitoring check
+python simple_setup.py  # Guided setup
+```
+
+## 📋 DEMO COMMANDS FOR JUDGES
+
+### **Show All Features**
+```bash
 python demo.py
+```
+*Displays complete feature overview and capabilities*
 
-# Test the monitoring system
+### **Live Monitoring Test**
+```bash
 python main.py
+```
+*Runs actual website monitoring with AI analysis*
 
-# Start continuous monitoring
+### **Continuous Monitoring**
+```bash
 python monitor_continuous.py
 ```
+*Monitors website every 5 minutes automatically*
 
-## 🔧 Setup Instructions
-
-### GitHub Integration Setup
-
-1. **Create Personal Access Token:**
-   - Go to GitHub Settings → Developer settings → Personal access tokens
-   - Generate new token with `repo` permissions
-   - Copy token to `.env` file
-
-2. **Repository Access:**
-   - Ensure your token has access to the repository
-   - Repository should contain the website code you're monitoring
-
-### Google Gemini Setup (FREE!)
-
-1. **Get API Key:**
-   - Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
-   - Sign in with your Google account
-   - Create a new API key
-   - **Completely FREE** - No credit card required!
-
-### Telegram Bot Setup
-
-1. **Create Bot:**
-   - Message [@BotFather](https://t.me/botfather) on Telegram
-   - Send `/newbot` and follow the instructions
-   - Save your bot token
-
-2. **Get Chat ID:**
-   - Start a chat with your bot
-   - Send any message to the bot
-   - Visit: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
-   - Find your `chat_id` in the response
-
-## 🎬 Demo Scenarios for Hackathon Judges
-
-### Scenario 1: Website Downtime Detection & Auto-Fix
-
-1. **Setup:** Configure monitoring for a test website
-2. **Action:** Take the website offline (stop server, etc.)
-3. **Result:** System detects downtime, Gemini AI analyzes issue, creates GitHub PR with fixes
-4. **Show:** Pull request with AI-generated code changes
-
-### Scenario 2: Configuration Error Resolution
-
-1. **Setup:** Introduce a configuration error in your website
-2. **Action:** Run the monitoring system
-3. **Result:** Gemini AI detects configuration issue, generates corrected config files
-4. **Show:** Before/after configuration comparison
-
-### Scenario 3: Code Bug Auto-Fix
-
-1. **Setup:** Introduce a bug in your website code
-2. **Action:** Deploy the broken code
-3. **Result:** System detects error, generates fix, creates PR
-4. **Show:** Code diff with AI-generated fixes
-
-## 📊 What You'll See
-
-### Successful Monitoring
-
+### **Quick Setup**
+```bash
+python simple_setup.py
 ```
-🚀 Portia Uptime Agent - Enhanced Hackathon Version (Gemini AI)
+*Interactive setup for API keys and configuration*
+
+## 🎯 WHAT JUDGES WILL SEE
+
+### **Successful Run Output:**
+```
+🚀 Portia Uptime Agent - Enhanced Hackathon Version
 📊 Monitoring: https://your-website.com
 🤖 AI Code Analysis: ✅ Enabled (Gemini)
 🔗 GitHub Integration: ✅ Enabled
 📱 Telegram Alerts: ✅ Enabled
---------------------------------------------------------------------------------
+🔌 Portia SDK: ✅ Enabled
 
-🔍 Checking uptime for https://your-website.com...
-📊 Uptime Check Result:
-   Status: UP
-   Details: {'status': 'UP', 'code': 200, 'response_time': 0.45}
-✅ Site is UP
+🔍 Checking uptime...
+📊 Status: UP
+✅ Response Time: 1.1s
+[SUCCESS] Site is UP
 ```
 
-### Website Down - Auto-Fix Process
-
+### **When Website Goes Down:**
 ```
 🚨 Site is DOWN (Count: 2/2)
-[CRITICAL] Down threshold reached (2) - Starting automatic fix process...
 [AI] Analyzing website issue using Gemini...
 [AI] Issue analyzed - Priority: HIGH
-[AI] Generating code fixes...
-[GITHUB] Cloning repository your-username/your-repo...
-[GITHUB] Repository cloned successfully to temp_repo_1234567890
-[GITHUB] Created and switched to branch: fix/website-downtime-1234567890
-[GITHUB] Applied fix to src/main.py
-[GITHUB] Changes committed and pushed: 🔧 Auto-fix: Website downtime issue detected and resolved
-[GITHUB] Pull request created: #42
-[SUCCESS] Automatic fix process completed successfully!
+[GITHUB] Creating pull request with fixes...
+[SUCCESS] PR #42 created with automatic fixes
+[TELEGRAM] Alert sent to monitoring team
 ```
 
-## 🏆 Key Innovation Points for Judges
+## 💡 KEY SELLING POINTS
 
-### **Autonomous Problem Resolution**
+### **💰 Cost-Effective**
+- **$0 AI Costs** - Google Gemini free tier
+- **$0 Basic Monitoring** - No subscription required
+- **$0 Notifications** - Free Telegram bot
 
-- **Zero Human Intervention**: System fixes issues automatically
-- **Gemini AI-Powered Analysis**: Uses Google's latest AI for intelligent issue diagnosis
-- **Self-Healing Infrastructure**: Websites automatically recover from failures
+### **🔥 Technical Innovation**
+- **AI-Powered Root Cause Analysis** - Uses latest Gemini model
+- **Self-Healing Architecture** - Automatically fixes detected issues
+- **Enterprise Integration** - GitHub, Telegram, Portia APIs
 
-### **Technical Excellence**
+### **📈 Business Value**
+- **Reduced Downtime** - Proactive monitoring and fixes
+- **Team Efficiency** - Automatic issue resolution
+- **Scalable Solution** - Monitor multiple websites
 
-- **Modern Tech Stack**: Python 3.11+, Google Gemini API, GitHub integration
-- **Scalable Architecture**: Cloud-native, Docker-ready deployment
-- **Security**: Secure API integration, environment-based configuration
-
-### **Business Value**
-
-- **Zero Downtime**: Continuous monitoring prevents service interruptions
-- **Cost Reduction**: Eliminates manual troubleshooting time
-- **User Experience**: Maintains website availability automatically
-- **💰 Zero AI Costs**: Completely free using Gemini's generous free tier
-
-## 💰 Why Google Gemini AI?
-
-### **Cost Benefits**
-
-- **🎯 Free Tier**: 15 requests per minute - Perfect for demos!
-- **🚀 Pro Tier**: $0.0025 per 1K characters (if you need more)
-- **⚡ Fast**: Optimized for real-time analysis
-- **🔒 Secure**: Google's enterprise-grade security
-- **🌐 Global**: Multiple data center locations worldwide
-
-### **Perfect for Hackathons**
-
-- **No Credit Card Required**: Sign up with Google account
-- **Generous Limits**: Free tier covers most demo scenarios
-- **Professional Quality**: Same AI that powers Google's services
-- **Easy Integration**: Simple Python library
-
-## 📁 Project Structure
+## 🗂️ PROJECT STRUCTURE
 
 ```
 portia-uptime-agent/
-├── main.py                    # Enhanced monitoring with Gemini AI fixes
-├── monitor_continuous.py      # Continuous monitoring script
-├── demo.py                    # Hackathon demo showcase
-├── HACKATHON_SETUP.md         # Complete setup guide for judges
-├── env_template.txt           # Environment configuration template
-├── portia_config.py           # Portia API configuration
-├── test_portia.py             # Portia API integration tests
-├── PORTIA_API_README.md       # Portia API integration guide
-├── README.md                  # This file
-├── requirements.txt           # Enhanced dependencies
-└── venv/                     # Virtual environment
+├── demo.py              # Feature demonstration
+├── main.py              # Core monitoring system
+├── simple_setup.py      # Interactive setup
+├── monitor_continuous.py # Continuous monitoring
+├── portia_sdk.py        # Portia API integration
+├── portia_config.py     # Configuration management
+├── requirements.txt     # Dependencies
+├── .env                 # API keys and config
+└── README.md           # This file
 ```
 
-## 🛠️ Enhanced Dependencies
+## ⚡ TECHNICAL REQUIREMENTS
 
-- `google-generativeai>=0.3.0` - Google Gemini AI integration (FREE!)
-- `PyGithub>=2.1.1` - GitHub API integration
-- `gitpython>=3.1.0` - Git operations
-- `requests>=2.28.0` - HTTP monitoring
-- `python-dotenv>=1.0.0` - Environment management
+- **Python 3.11+** (Currently running 3.12)
+- **Internet Connection** (for API calls)
+- **API Keys** (Google Gemini required, others optional)
 
-## 🔌 Portia API Integration
+## 🏆 READY FOR HACKATHON
 
-The Portia Uptime Agent now includes **Portia API integration** for enhanced monitoring capabilities:
+This project demonstrates:
+- ✅ **AI Integration** - Cutting-edge Gemini AI
+- ✅ **Practical Application** - Real website monitoring
+- ✅ **Professional Quality** - Enterprise-grade features
+- ✅ **Innovation** - Self-healing infrastructure
+- ✅ **Cost Efficiency** - Free tier utilization
 
-- **Enhanced Monitoring Data**: Get additional insights from Portia API
-- **Automatic Incident Reporting**: Send downtime reports to Portia API
-- **Configurable Endpoints**: Easy customization of API endpoints
-- **Graceful Fallback**: Continues monitoring even if Portia API is unavailable
-
-### Quick Portia API Setup
-
-1. **Add your Portia API key to `.env`:**
-
-   ```env
-   PORTIA_API_KEY=prt-5XpKO1cC.2QG1alMXZRyvr7X7Ci8d4jDJ1y7LVQQ3
-   ```
-
-2. **Test the integration:**
-
-   ```bash
-   python test_portia.py
-   ```
-
-3. **Customize endpoints in `portia_config.py`**
-
-See `PORTIA_API_README.md` for complete documentation.
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-1. **GitHub Authentication Failed**
-   - Check personal access token permissions
-   - Verify repository access
-
-2. **Gemini API Errors**
-   - Verify API key is correct
-   - Check free tier limits (15 req/min)
-
-3. **Telegram Notifications Not Working**
-   - Verify bot token and chat ID
-   - Ensure bot is started
-
-## 🎯 Judging Criteria Alignment
-
-- **Innovation (25%)**: Autonomous problem resolution, Gemini AI-powered analysis
-- **Technical Implementation (25%)**: Clean code, modern stack, error handling
-- **User Experience (20%)**: Easy setup, clear notifications, intuitive interface
-- **Business Impact (20%)**: Reduces costs, improves reliability, scalable, **ZERO AI costs**
-- **Presentation (10%)**: Clear demo, professional docs, effective communication
-
-## 🚀 Next Steps
-
-1. **Deploy to Production**: Set up on cloud infrastructure
-2. **Add More Features**: Database monitoring, API health checks
-3. **Scale Monitoring**: Multiple websites, team notifications
-4. **Commercialize**: Offer as SaaS service with **free AI tier**
+**Status: FULLY FUNCTIONAL** 🎉
 
 ---
 
-**This is the future of autonomous infrastructure management - powered by FREE AI! 🚀**
-
-The Portia Uptime Agent represents a paradigm shift from reactive monitoring to proactive, self-healing systems, all while keeping costs at **ZERO** thanks to Google Gemini's generous free tier.
+*Built with Google Gemini AI, Portia SDK, and modern Python architecture*

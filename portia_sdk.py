@@ -4,6 +4,7 @@ Portia SDK Client
 Comprehensive client for Portia API integration
 """
 
+import os
 import requests
 import json
 import time
@@ -26,6 +27,11 @@ class PortiaSDK:
         else:
             self.enabled = True
             print(f"[PORTIA] SDK initialized with API key: {self.config['api_key'][:10]}...")
+            
+            # Check if org ID is available
+            org_id = os.getenv("PORTIA_ORG_ID")
+            if not org_id or org_id == "your_actual_org_id_from_dashboard":
+                print("[WARNING] Portia Organization ID not configured - some features may be limited")
     
     def _make_request(self, method: str, endpoint: str, data: Optional[Dict] = None, 
                      params: Optional[Dict] = None, retry: bool = True) -> Optional[Dict]:
@@ -51,6 +57,12 @@ class PortiaSDK:
                     return response.json()
                 elif response.status_code == 401:
                     print(f"[PORTIA] Authentication failed - check API key")
+                    return None
+                elif response.status_code == 400 and "X_PORTIA_ORG_ID" in response.text:
+                    print(f"[PORTIA] Organization ID required but not configured - skipping Portia features")
+                    return None
+                elif response.status_code == 400 and "Invalid Org ID" in response.text:
+                    print(f"[PORTIA] Invalid Organization ID - skipping Portia features")
                     return None
                 elif response.status_code == 429:
                     print(f"[PORTIA] Rate limited - waiting before retry")

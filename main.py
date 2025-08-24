@@ -228,13 +228,12 @@ class UptimeMonitor:
                     return {"status": "UP", "code": response.status_code, "response_time": response.elapsed.total_seconds()}
                 else:
                     return {"status": "DOWN", "code": response.status_code, "error": f"HTTP {response.status_code}"}
-                    
             except requests.exceptions.Timeout:
                 return {"status": "DOWN", "error": "Timeout"}
             except requests.exceptions.ConnectionError:
                 return {"status": "DOWN", "error": "Connection Error"}
-        except Exception as e:
-            return {"status": "DOWN", "error": str(e)}
+            except Exception as e:
+                return {"status": "DOWN", "error": str(e)}
         
         return {"status": "DOWN", "error": "All retry attempts failed"}
 
@@ -399,10 +398,12 @@ def main():
                 print(f"[PORTIA] SDK initialized successfully")
             else:
                 print(f"[PORTIA] SDK disabled - check configuration")
+                portia_client = None
         except ImportError:
             print(f"[WARNING] Portia SDK not available - using basic integration")
         except Exception as e:
             print(f"[WARNING] Portia SDK initialization failed: {e}")
+            portia_client = None
     
     # Check uptime
     print(f"\n🔍 Checking uptime for {MONITORED_URL}...")
@@ -494,7 +495,7 @@ The website is now accessible again.
             """
             send_telegram_alert(recovery_message)
         else:
-        print("[SUCCESS] Site is UP")
+                print("[SUCCESS] Site is UP")
     
     monitor.last_status = result.get('status')
 
