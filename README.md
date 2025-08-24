@@ -3,6 +3,7 @@
 **An autonomous website monitoring system that uses AI to detect and fix issues automatically.**
 
 ## ✅ WORKING FEATURES (Verified & Ready for Demo)
+- demo video https://www.youtube.com/watch?v=7GYWjlkbHP4
 
 ### **🤖 AI-Powered Analysis**
 - **Google Gemini AI Integration** - 100% FREE tier (15 requests/min)
